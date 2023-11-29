@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Media</title>
+</head>
+<body>
+
+    <h1> Calculadora de Media</h1>
+    <h3> Informe as medias do aluno:</h3>
+
+    <input type="number" id="n1">
+    <input type="number" id="n2">
+    <input type="number" id="n3">
+    <input type="number" id="n4">
+    <button onclick="numeros()"> Exibir Media</button>
+    <script>
+     
+     function numeros(){
+     var soma = parseInt("n1".value + "n2".value + "n3".value + "n4".value /4);
+     console.log("Resultado: " + soma)
+     }
+
+
+    </script>
+    
+</body>
+</html>
