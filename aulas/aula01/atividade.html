@@ -7,22 +7,31 @@
 </head>
 <body>
 
-    <h1> Calculadora de Media</h1>
-    <h3> Informe as medias do aluno:</h3>
+    <h1>Calculadora de Média</h1>
 
-    <input type="number" id="n1">
-    <input type="number" id="n2">
-    <input type="number" id="n3">
-    <input type="number" id="n4">
-    <button onclick="numeros()"> Exibir Media</button>
+    <h2>Informe as médias do aluno:</h2>
+
+    <input id="nota1" type="number" placeholder="primeira nota...">
+    <input id="nota2" type="number" placeholder="segunda nota...">
+    <input id="nota3" type="number" placeholder="terceira nota...">
+    <input id="nota4" type="number" placeholder="quarta nota...">
+
+    <button onclick="media()">Exibir Média</button>
+
     <script>
-     
-     function numeros(){
-     var soma = parseInt("n1".value + "n2".value + "n3".value + "n4".value /4);
-     console.log("Resultado: " + soma)
-     }
+        function media(){
+            const unidades = 4;
 
+            var nota1 = parseFloat(document.getElementById("nota1").value);
+            var nota2 = parseFloat(document.getElementById("nota2").value);
+            var nota3 = parseFloat(document.getElementById("nota3").value);
+            var nota4 = parseFloat(document.getElementById("nota4").value);
 
+            var somaNotas = nota1 + nota2 + nota3 + nota4;
+            var media = somaNotas/unidades;
+
+            window.alert(media);
+        }
     </script>
     
 </body>
