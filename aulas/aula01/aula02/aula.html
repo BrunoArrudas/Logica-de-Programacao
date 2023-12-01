@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 02 - Variveis e tipos de Dados</title>
+</head>
+<body>
+    <h1>Aula 02 - Variaveis e tipos de Dados</h1>
+
+    <h2>Exemplo de variaveis</h2>
+    
+    <code>
+        //Declaração e atribuição de variaveis<br>
+        var idade = 25;<br>
+        let nome = "Joao";<br>
+        const pi = 3.14;<br>
+        tenhoGrana = 0 > 1;<br>
+        let resultado = 0.1 + 0.2 //1.2 + 1.3  //Javascript não é tão utilizado no Back-end<br>
+        <br>
+        console.log(typeof(resultado)); //number,string,pi-number e bolean.<br>
+    </code>
+
+    <script>
+        //Declaração e atribuição de variaveis
+        var idade = 25;
+        let nome = "Joao";
+        const pi = 3.14;
+        tenhoGrana = 0 > 1;
+        let resultado = 0.1 + 0.2 //1.2 + 1.3  //Javascript não é tão utilizado no Back-end
+
+        console.log(typeof(resultado)); //number,string,pi-number e bolean 
+    </script>
+
+    <h2>Tipos de Dados</h2>
+
+    <code>
+        let numeroInteiro = 42;<br>
+        let numeroDecimal = 4.14;<br>
+        let texto = "Isso é uma string!";<br>
+        var booleano = true;<br>
+    </code>
+
+    <script>
+        let numeroInteiro = 42;
+        let numeroDecimal = 4.14;
+        let texto = "Isso é uma string!";
+        var booleano = true;
+    </script>
+
+    <h2>Operações com Variaveis</h2>
+
+    <code>
+        //Operações com variáveis><br>
+        let x = 10; let y = 5;><br>
+        <br>
+        let soma = x + y;><br>
+        let subtracao = x - y;><br>
+        let multiplicacao = x * y;><br>
+        let divisao = x / y;><br>
+        <br>
+        console.log("Soma:", soma);><br>
+        console.log("Subtração:", subtracao);><br>
+        console.log("Multiplicação:", multiplicacao);><br>
+        console.log("Divisão:", divisao);><br>
+        <br>
+        let idade = 20;><br>
+        console.log("Idade:",idade);><br>
+        ><br>
+        idade += 5;><br>
+        console.log("Nova Idade:",idade);><br>
+        ><br>
+        let restoDivisao = idade % 4;><br>
+        console.log("Resto da Divisão:", restoDivisao);><br>
+    </code>
+    
+    <script>
+        //Operaçoes com variaveis
+        let x = 10; let y = 5;
+
+        let soma = x + y;
+        let subtracao = x - y;
+        let multiplicacao = x * y;
+        let divisao = x / y;
+
+        console.log("Soma:", soma);
+        console.log("Subtração:", subtracao);
+        console.log("Multiplicação:", multiplicacao);
+        console.log("Divisão:", divisao);
+
+        let idade = 20;
+        console.log("Idade:",idade);
+
+        idade = idade + 5;
+        idade += 5; //Metodo mais comum.
+        console.log("Nova Idade:",idade);
+
+        let restoDivisao = idade % 4;
+        console.log("Resto da Divisão:", restoDivisao);
+        
+    </script>
+</body>
+</html>
