@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+</head>
+<body>
+    <h1>Desafio - Quiz de conhecimento gerais</h1>
+
+    <form>
+        <h3>Pergunta 1: Qual é a capital do Brasil?</h3>
+        <input type="text" id="resposta1" placeholder="Sua resposta...." required>
+
+        <h3>Pergunta 2: Qual é o maior oceano do mundo?</h3>
+        <input type="text" id="resposta2" placeholder="Sua resposta...." required>
+
+        <h3>Pergunta 3: Quem escreveu Romeu e Julieta?</h3>
+        <input type="text" id="resposta3" placeholder="Sua resposta...." required>
+
+        <h3>Pergunta 4: Qual o simbolo quimico do ouro?</h3>
+        <input type="text" id="resposta4" placeholder="Sua resposta...." required>
+
+        <h3>Pergunta 5: Em que ano ocorreu a independencia do Brasil?</h3>
+        <input type="text" id="resposta5" placeholder="Sua resposta...." required>
+
+    </form>
+
+
+    <br>
+    <button type="button" onclick="verificarRespostas()">Verificar Respostas</button>
+
+    <script>
+        function verificarRespostas(){
+            
+            //Guardar respostas em variaveis 
+
+            let res1 = document.getElementById("resposta1");
+            let res2 = document.getElementById("resposta2");
+            let res3 = document.getElementById("resposta3");
+            let res4 = document.getElementById("resposta4");
+            let res5 = document.getElementById("resposta5");
+            
+
+            //if (resposta correta) pontuação++;
+
+            if(res1 == "Distrito Federal"){
+                console.log("Aprovado")
+            }else{
+                console.log("errado")
+            };
+
+            if(res2 == "Pacifico"){
+                console.log("Aprovado")
+            }else{
+                console.log("errado")
+            };
+
+            if(res3 == "William Shakespeare"){
+                console.log("Aprovado")
+            }else{
+                console.log("errado")
+            };
+
+            if(res4 == "Au"){
+                console.log("Aprovado")
+            }else{
+                console.log("errado")
+            };
+
+            if(res5 == "7 de setembro"){
+                console.log("Aprovado")
+            }else{
+                console.log("errado")
+            };
+        }
+    </script>
+
+
+
+
+</body>
+</html>
