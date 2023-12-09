@@ -44,21 +44,59 @@
 
     
     </script>
-
+                                    
     <script>
           
         // Função que recebe um texto e informa o seu tamanho
 
-        let text = "Qualquer texto";
-        console.log("O texto tem ", tamanhoTexto(text));
+        //let text = "Qualquer texto";
+       // console.log("O texto tem ", tamanhoTexto(text));
 
-        function tamanhoTexto(textoRecebido) {
-            return textoRecebido.length;
-        }
-        
+       // function tamanhoTexto(textoRecebido) {
+        // return textoRecebido.length;
+          // }
+
         // Função que recebe uma lista de nomes e retorna o de maior tamanho
+    ////////////////////////////////////////////////////////////////
 
+        // let listaNomes = ["Jessica", "Carlos", "Maria", "Suzane", "Ariosvaldo"];
 
+        //console.log(maiorNome(listaNomes));
+
+       // function maiorNome(nomes) {
+            //let maior = nomes[0];
+            //for(let i = 1; i < nomes.length; i++) {
+              //  if(nomes[i].length > maior.length)
+              //      maior = nomes[i];
+          //  }
+          //  return maior;
+      //  }
+
+      //////////////////////////////////////////////////////////////
+
+      // Função que recebe um número e informa se o mesmo é par
+        
+        console.log(ehPar(18));
+
+        function ehPar(numero) {
+            return numero % 2 === 0;
+        }
+
+      //////////////////////////////////////////////////////////////
+      
+      function impares(listaNumeros) {
+            let impares = [];
+
+            for(let posicaoAtual = 0; posicaoAtual < listaNumeros.length; posicaoAtual++) {
+                if(!ehPar(listaNumeros[posicaoAtual])) {
+                    impares.push(listaNumeros[posicaoAtual]);
+                }
+            }
+            return impares;
+        }
+
+        let numerosParaExtrair = [1, 2, 3, 4, 5, 6, 7, 8];
+        console.log(impares(numerosParaExtrair))
 
     </script>
     
