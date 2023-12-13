@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asserts em Javascript</title>
+</head>
+<body>
+    
+     
+    <h1>Exemplo de Assert</h1>
+
+    <script>
+
+        function soma(numeroA, numeroB){
+
+            return numeroA + numeroB;
+
+        }  
+        
+        console.assert(soma(5,4) === 9, "Resultado esperado:9,  resultado obtido: "+ soma(5,4));
+        console.assert(soma(0,0) === 0, "Resultado esperado:0,  resultado obtido: "+ soma(5,4));
+        console.assert(soma(100,10) === 110, "Resultado esperado:110,  resultado obtido: "+ soma(5,4));
+
+    </script>
+
+</body>
+</html>
