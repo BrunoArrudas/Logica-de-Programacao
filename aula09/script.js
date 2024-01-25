@@ -50,6 +50,10 @@ class ContaPoupanca extends Conta {
         super(numero, saldo);
         this.taxaRendimento = taxaRendimento;
     }
+
+    aplicarRendimento() {
+        this.saldo += this.saldo * this.taxaRendimento;
+    }
 }
 
 let contaCorr = new ContaCorrente(1122, 100);
@@ -62,4 +66,8 @@ contaCorr.sacar(200);
 contaPoup.sacar(200);
 
 console.log(contaCorr.toString());
+console.log(contaPoup.toString());
+
+console.log("Apliquei rendimento na conta poupança")
+contaPoup.aplicarRendimento();
 console.log(contaPoup.toString());
