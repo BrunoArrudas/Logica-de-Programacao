@@ -19,7 +19,12 @@ Crie a função atacar
     - atacar, recebe como parametro um personaem/inimigo
     - so pode atacar alguém com vida
     - exibe o console.log informando qual a força do ataque e inimigo atacado
- */
+
+Exercício:
+    - Crie um limite de vida máxima para o personagem
+    - Crie uma função de recuperar vida que recebe um total de pontos para recuperar
+    - A recuperação de vida não pode fazer o personagem ir além da vida máxima
+*/
 
     class Personagem {
         constructor(nome, ataque, defesa, vida, posicao, vivo = true) {
@@ -29,6 +34,7 @@ Crie a função atacar
             this.posicao = posicao;
             this.vida = vida;
             this.vivo = vivo;
+            this.vidaMaxima = vida;
         }
     
         morrer() {
@@ -58,6 +64,17 @@ Crie a função atacar
                 console.log("Não é possível atacar na condição de morto!");
             }
         }
+
+        recuperarVida(vidaRecebida, personagem = this){
+            personagem.vida += vidaRecebida;
+
+            if(personagem.vida > personagem.vidaMaxima){
+                personagem.vida = personagem.vidaMaxima;
+            }
+
+            console.log(`${this.nome} recuperou um total de ${vidaRecebida}, ficando com ${this.vida} de vida`);
+        }
+ 
     }
     
     let personagem1 = new Personagem("Arthur", 10, 12, 100, 1, true);
@@ -68,6 +85,8 @@ Crie a função atacar
     
     console.log(personagem1.atacar(personagem2));
     console.log(personagem2.atacar(personagem1));
+    console.log(personagem1.recuperarVida(15));
+    console.log(personagem1.recuperarVida(15,personagem2));
 
 //const guerreiro = new Personagem("Arthur", 10, 12, 1); Agrega valores ao constructor.
 
