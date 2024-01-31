@@ -31,6 +31,14 @@ Alterações do Guerreiro:
     - Acrescente a propriedade "escudo" na classe Guerreiro.
     - A função tomarDano do Guerreiro deve proteger seus pontos de vida,
     abatendo o dano sofrido dos pontos do seu escudo.
+
+    - Acrescente a sobrescrita da função atacar, verificando a posição do inimigo.
+    - Se o inimigo estiver a mais de 1 de distancia, o guerreiro não pode atacar.
+
+    Alterações do Arqueiro:
+    - O arqueiro só pode atacar se a distancia dele para o oponente for maior do que 3.
+    - O arqueiro tem um totalDeFlechas.
+    - O arqueiro só pode atacar se o total de flechas for maior que 0
 */
 
 class Personagem {
@@ -87,6 +95,14 @@ class Arqueiro extends Personagem {
     constructor(nome, ataque, defesa, vida, posicao, vivo = true) {
         super(nome, ataque, defesa, vida, posicao, vivo)
     }
+
+    ataqueArqueiro(){
+        if(Math.abs(inimigo.posicao - this.posicao) < 2){
+            super.ataqueArqueiro();
+        }else{
+            console.log(``)
+        }
+    }
 }
 
 class Guerreiro extends Personagem {
@@ -104,6 +120,15 @@ class Guerreiro extends Personagem {
         }
         super.tomarDano(quantidade);
     }
+
+    atacar(inimigo) {
+        if(Math.abs( inimigo.posicao - this.posicao) < 2) {
+            super.atacar(inimigo);
+        } else {
+            console.log(`${inimigo.nome} muito distante para atacar.`)
+        }
+    }
+
 }
 
 class Mago extends Personagem {
@@ -113,7 +138,7 @@ class Mago extends Personagem {
 }
 
 let personagem1 = new Guerreiro("Aragorn", 10, 12, 100, 1, true, 5);
-let personagem2 = new Mago("Gendalf", 12, 8, 85, 1);
+let personagem2 = new Mago("Gendalf", 12, 8, 85, 6);
 
 console.log(personagem1.atacar(personagem2));
 console.log(personagem2.atacar(personagem1));
