@@ -23,7 +23,7 @@ class Pessoa {
             return false;
         }
          
-         alert("Pessoa não era nascida nesse ano!");
+         alert("Pessoa não era nascida nesse ano")
         //return "Pessoa não era nascida nesse ano!"
     }
 
