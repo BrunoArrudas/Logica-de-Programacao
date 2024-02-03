@@ -14,6 +14,10 @@ class Pessoa {
     }
 
     ehAdulto(ano) {
+
+        let ano = new Date;
+        ano = ano.getFullYear();
+
         let adulto = ano - this.anoNascimento > 18;
         let idadePositiva = ano - this.anoNascimento >= 0; // Faz o 0 contar tambem.
 
@@ -37,7 +41,7 @@ console.log(pessoaA.ehAdulto(2024)) //2024 Passou o parametro a ser medido.
 
 
 
-// Jeitos diferentes de fazer a mesma verificaçãp
+// Jeitos diferentes de fazer a mesma verificação.
 //--------------------------------------------------------------------------------//
 // Outro exemplo de numero negativo
 //console.log(pessoaA)
