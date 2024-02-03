@@ -8,16 +8,22 @@
 
 Parte 2:
     - Crie uma função cadastrarVeiculo
+
+#Exercício:
+    - Adicione ao veículo um anoDeFabricacao
+    - Adicione uma função que retorne se o veículo é isento de IPVA naquele ano.
+    - Utilize o Date().getFullYear();
 */
 
 class Veiculo {
-    constructor(marca, modelo, preco, cor, autonomia, capacidadeTanque, imagemURL) {
+    constructor(marca, modelo, preco, cor, autonomia, capacidadeTanque, anoDeFabricacao, imagemURL) {
         this.marca = marca;
         this.modelo = modelo;
         this.preco = preco;
         this.cor = cor;
         this.autonomia = autonomia;
         this.capacidadeTanque = capacidadeTanque;
+        this.anoDeFabricacao = anoDeFabricacao;
         this.imagemURL = imagemURL;
     }
 
@@ -26,7 +32,18 @@ class Veiculo {
     }
 
     exibirDetalhes() {
-        return `${this.marca} ${this.modelo} - ${this.cor} - R$ ${this.preco.toFixed(2)}`;
+        if (this.ehIsentoIPVA()) {
+            return `${this.marca} ${this.modelo} - ${this.cor} - R$ ${this.preco.toFixed(2)} ISENTO DE IPVA!`;
+        } else {
+            return `${this.marca} ${this.modelo} - ${this.cor} - R$ ${this.preco.toFixed(2)}`;
+        }
+    }
+
+    ehIsentoIPVA() {
+        const dataAtual = new Date;
+        const anoAtual = dataAtual.getFullYear();
+
+        return anoAtual - this.anoDeFabricacao >= 20;
     }
 }
 
@@ -41,39 +58,38 @@ function cadastrarVeiculo() {
     const cor = document.getElementById("cor").value;
     const autonomia = parseInt(document.getElementById("autonomia").value);
     const capacidadeTanque = parseInt(document.getElementById("capacidadeTanque").value);
-    const imagemURL = document.getElementById("imagemURL").value;    
+    const anoDeFabricacao = parseInt(document.getElementById("anoDeFabricacao").value);
+    const imagemURL = document.getElementById("imagemURL").value;
 
     // Instanciar um novo objeto veículo, passando os valores pedidos no construtor
-    const veiculo = new Veiculo(marca, modelo, preco, cor, autonomia, capacidadeTanque, imagemURL);
+    const veiculo = new Veiculo(marca, modelo, preco, cor, autonomia, capacidadeTanque, anoDeFabricacao, imagemURL);
 
     // Adicionar o veículo a nossa lista "banco de dados"
     veiculos.push(veiculo);
 
     // Atualiza a exibição
     exibirVeiculos()
-    //console.log(veiculos);
 
     // Limpar formulário
     document.getElementById("veiculoForm").reset();
 }
 
-function exibirVeiculos(){
+function exibirVeiculos() {
     const veiculosList = document.getElementById("veiculosList");
-    // Limpar a lista antes de exibir a lista de veiculos
-    veiculosList.innerHTML = ""; // Limpar a lista
+    // Limpar a lista antes de exibir os veículos
+    veiculosList.innerHTML = "";
 
     for (let i = 0; i < veiculos.length; i++) {
         const veiculoItem = document.createElement("li");
         const veiculoCard = criarVeiculoCard(veiculos[i]);
-        veiculosList.appendChild(veiculoCard); //Passando imagens da função criarVeiculoCard.
+        veiculosList.appendChild(veiculoCard);
         veiculosList.appendChild(veiculoItem);
     }
-
 }
 
-function criarVeiculoCard(veiculo){
+function criarVeiculoCard(veiculo) {
     const veiculoCard = document.createElement("div");
-    veiculoCard.className = "veiculo-card" //Puxa a classe CSS.
+    veiculoCard.className = "veiculo-card";
 
     const imagemVeiculo = document.createElement("img");
     imagemVeiculo.src = veiculo.imagemURL;
@@ -87,7 +103,6 @@ function criarVeiculoCard(veiculo){
 
     return veiculoCard;
 }
-
 
 //veiculos.push( new Veiculo("Audi","A3", 100000, "cinza", 12, 100, "www.url.com"));
 //console.log(veiculos);
