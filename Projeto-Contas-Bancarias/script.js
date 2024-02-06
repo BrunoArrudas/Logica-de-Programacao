@@ -22,7 +22,7 @@ class Conta {
     }
 
     depositar(valorDeposito) {
-        if(valorDeposito > 0) {
+        if (valorDeposito > 0) {
             this.saldo += valorDeposito;
             return true;
         }
@@ -33,11 +33,11 @@ class Conta {
     transferir(valorTransferencia, conta) {
         //se consigo sacar dessa conta
         //posso depositar na conta destino
-        if(this.sacar(valorTransferencia)) {            
+        if (this.sacar(valorTransferencia)) {
             conta.depositar(valorTransferencia)
             return true;
         }
-        
+
         return false;
     }
 }
@@ -53,12 +53,12 @@ class ContaCorrente extends Conta {
         //Verificar se pode sacar com base nessa soma.
         const valorlimiteEspecial = this.saldo + this.limiteChequeEspecial;
 
-        if(valorSaque <= valorlimiteEspecial){
+        if (valorSaque <= valorlimiteEspecial) {
             return super.sacar(valorSaque);
         }
         return false
 
-        }
+    }
 }
 
 class ContaPoupanca extends Conta {
